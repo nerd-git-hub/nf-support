@@ -48,27 +48,27 @@ const SupportPage = () => {
     return (
         <div className="support-container">
             <div className="support-card">
-                <h2 className="title">Get in Touch</h2>
-                <p className="subtitle">We're here to help! Send us your query.</p>
+                <h2 className="title">HERO SUPPORT</h2>
+                <p className="subtitle">SEND A SIGNAL TO HEADQUARTERS!</p>
 
                 <form ref={form} onSubmit={sendEmail} className="support-form">
                     <div className="input-group">
-                        <label htmlFor="user_name">Name</label>
-                        <input type="text" name="user_name" id="user_name" placeholder="John Doe" required />
+                        <label htmlFor="user_name">Secret Identity (Name)</label>
+                        <input type="text" name="user_name" id="user_name" placeholder="PETER PARKER" required />
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="user_email">Email</label>
-                        <input type="email" name="user_email" id="user_email" placeholder="john@example.com" required />
+                        <label htmlFor="user_email">Comms Channel (Email)</label>
+                        <input type="email" name="user_email" id="user_email" placeholder="spidey@avengers.com" required />
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="message">Query</label>
-                        <textarea name="message" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                        <label htmlFor="message">Mission Query</label>
+                        <textarea name="message" id="message" rows="5" placeholder="WHAT'S THE MISSION, CAP?" required></textarea>
                     </div>
 
                     <button type="submit" disabled={loading} className={`submit-btn ${loading ? 'loading' : ''}`}>
-                        {loading ? 'Sending...' : 'Send Message'}
+                        {loading ? 'SENDING SIGNAL...' : 'ASSEMBLE!'}
                     </button>
 
                     {message && (

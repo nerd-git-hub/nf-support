@@ -1,44 +1,97 @@
 /* SupportPage.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@700&display=swap');
+
+:root {
+    --marvel-red: #ED1D24;
+    --comic-yellow: #FFD700;
+    --bg-blue: #002D5B;
+    /* Deep Marvel Blue */
+    --ink-black: #111111;
+    --border-width: 4px;
+}
+
 .support-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+    background-image: linear-gradient(rgba(0, 45, 91, 0.7), rgba(0, 45, 91, 0.7)), url('/marvel-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Comic decorative elements */
+.support-container::before {
+    content: "BAM!";
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-family: 'Bangers', cursive;
+    font-size: 5rem;
+    color: var(--comic-yellow);
+    text-shadow: 3px 3px 0 var(--ink-black);
+    transform: rotate(-15deg);
+    opacity: 0.3;
+}
+
+.support-container::after {
+    content: "POW!";
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    color: var(--marvel-red);
+    text-shadow: 3px 3px 0 var(--ink-black);
+    transform: rotate(15deg);
+    opacity: 0.3;
 }
 
 .support-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: white;
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: var(--border-width) solid var(--ink-black);
+    /* Hand-drawn irregular border look */
+    border-radius: 4px 10px 4px 12px / 12px 4px 10px 4px;
+    box-shadow: 10px 10px 0 var(--ink-black);
     width: 100%;
     max-width: 500px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.support-card:hover {
-    transform: translateY(-5px);
+    position: relative;
+    z-index: 10;
 }
 
 .title {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 28px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: var(--marvel-red);
+    margin-bottom: 5px;
+    font-size: 3rem;
     font-weight: 700;
     text-align: center;
+    letter-spacing: -1px;
+    -webkit-text-stroke: 1.5px var(--ink-black);
+    text-shadow: 4px 4px 0px var(--comic-yellow);
 }
 
 .subtitle {
-    color: #666;
+    font-family: 'Oswald', sans-serif;
+    color: var(--ink-black);
     margin-bottom: 30px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--comic-yellow);
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid var(--ink-black);
+    transform: rotate(-1deg);
 }
 
 .input-group {
@@ -47,74 +100,108 @@
 
 .input-group label {
     display: block;
-    margin-bottom: 8px;
-    color: #444;
-    font-weight: 500;
-    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--ink-black);
+    font-weight: 800;
+    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
 }
 
 .input-group input,
 .input-group textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    outline: none;
-    background: #f9f9f9;
+    border: var(--border-width) solid var(--ink-black);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Oswald', sans-serif;
+    background: #fdfdfd;
+    box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #667eea;
+    outline: none;
     background: #fff;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    border-color: var(--marvel-red);
 }
 
 .submit-btn {
     width: 100%;
-    padding: 14px;
-    background: linear-gradient(to right, #667eea, #764ba2);
+    padding: 15px;
+    background-color: var(--marvel-red);
     color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    border: var(--border-width) solid var(--ink-black);
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-family: 'Bangers', cursive;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    transition: all 0.1s ease;
+    box-shadow: 6px 6px 0 var(--ink-black);
+    letter-spacing: 2px;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(to right, #764ba2, #667eea);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6);
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--ink-black);
+    background-color: #ff3c43;
+}
+
+.submit-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink-black);
 }
 
 .submit-btn:disabled {
-    opacity: 0.7;
+    background: #999;
     cursor: not-allowed;
+    box-shadow: none;
     transform: none;
 }
 
 .message {
-    margin-top: 20px;
-    padding: 12px;
-    border-radius: 8px;
+    margin-top: 25px;
+    padding: 15px;
+    border: var(--border-width) solid var(--ink-black);
+    border-radius: 4px;
     text-align: center;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Speech bubble tail for messages */
+.message::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 20%;
+    border-width: 0 15px 15px 15px;
+    border-style: solid;
+    border-color: transparent transparent var(--ink-black) transparent;
 }
 
 .message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: #a7ffbc;
+    color: var(--ink-black);
 }
 
 .message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: #ffb8b8;
+    color: var(--ink-black);
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .support-container::before,
+    .support-container::after {
+        display: none;
+    }
 }
